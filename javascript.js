@@ -11,4 +11,46 @@ function getComputerChoice() {
 }
 
 
-console.log(getComputerChoice());
+function playRound(playerChoice, computerChoice) {
+    if (playerChoice == 'rock' && computerChoice == 'rock') {
+        return 'Tie!';
+    }
+    else if (playerChoice == 'rock' && computerChoice == 'paper') {
+        return 'You Lose!';
+    }
+    else if (playerChoice == 'rock' && computerChoice == 'scissors') {
+        return 'You Win!';
+    }
+    else if (playerChoice == 'paper' && computerChoice == 'rock') {
+        return 'Tie!';
+    }
+    else if (playerChoice == 'paper' && computerChoice == 'paper') {
+        return 'You Lose!';
+    }
+    else if (playerChoice == 'paper' && computerChoice == 'scissors') {
+        return 'You Win!';
+    }
+    else if (playerChoice == 'scissors' && computerChoice == 'rock') {
+        return 'Tie!';
+    }
+    else if (playerChoice == 'scissors' && computerChoice == 'paper') {
+        return 'You Lose!';
+    }
+    else if (playerChoice == 'scissors' && computerChoice == 'scissors') {
+        return 'You Win!';
+    }
+}
+
+
+function playGame() {
+    let userPrompt = prompt("Please type Rock, Paper, or Scissors.", "Rock, Paper, or Scissors");
+    let lowerCaseChoice = userPrompt.toLowerCase();
+    return playRound(lowerCaseChoice, getComputerChoice());
+    
+}
+
+console.log(playGame());
+console.log(playGame());
+console.log(playGame());
+console.log(playGame());
+console.log(playGame());
